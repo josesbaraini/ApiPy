@@ -32,18 +32,37 @@ def adress_create_list_view(request):
 @csrf_exempt
 def adress_datail_view(request, pk):
     adress = get_object_or_404(Adress, pk=pk)
-    date = {
-    'id': adress.id,
-    'type': adress.type,
-    'state_registration': adress.state_registration,
-    'postal_code': adress.postal_code,
-    'address': adress.address,
-    'address_complement': adress.address_complement,
-    'neighborhood': adress.neighborhood,
-    'city': adress.city,
-    'area_code': adress.area_code,
-    'state_abbr': adress.state_abbr,
-    'state': adress.state,
-    'ibge_code': adress.ibge_code
-}
-    return JsonResponse(date)
+    if request.method == 'GET':
+        date = {
+        'id': adress.id,
+        'type': adress.type,
+        'state_registration': adress.state_registration,
+        'postal_code': adress.postal_code,
+        'address': adress.address,
+        'address_complement': adress.address_complement,
+        'neighborhood': adress.neighborhood,
+        'city': adress.city,
+        'area_code': adress.area_code,
+        'state_abbr': adress.state_abbr,
+        'state': adress.state,
+        'ibge_code': adress.ibge_code
+    }
+        return JsonResponse(date)
+    elif request.method == 'PUT':
+        data = json.loads(request.body.decode('utf-8'))
+        adress.type=data['type']
+        adress.state_registration=data['state_registration']
+        adress.postal_code=data['postal_code']
+        adress.address=data['address']
+        adress.address_complement = data['address_complement']
+        adress.neighborhood = data['neighborhood']
+        adress.city = data['city']
+        adress.area_code = data['area_code']
+        adress.state_abbr = data['state_abbr']
+        adress.state = data['state'],
+        adress.ibge_code = data['ibge_code']
+        adress.save()
+
+        return JsonResponse(
+            {'id':adress.id, 'adress': adress.address}
+        )
