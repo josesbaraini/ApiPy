@@ -1,3 +1,4 @@
+from django.db.models import Avg
 from rest_framework import serializers
 from client.models import Client
 from emails.serializers import EmailSerializer
@@ -13,12 +14,7 @@ class ClientModelSerializer(serializers.ModelSerializer):
         fields= "__all__"
 
     def get_rate(self, obj):
-        reviews = obj.reviews.all()
-        if reviews:
-            sum_reviews = 0
-            for review in reviews:
-                sum_reviews += review.stars
-            return round(sum_reviews / reviews.count(), 1)
-        
-
+        rate = obj.reviews.aggregate(Avg('stars'))['stars__avg']
+        if rate:
+            return round(rate, 1)
         return None
