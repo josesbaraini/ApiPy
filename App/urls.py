@@ -13,6 +13,8 @@ urlpatterns = [
 
     path('api/v1/', include('phone.urls')),
 
+    path('api/v1/', include('reviews.urls')),
+
 
 
 

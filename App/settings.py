@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'client',
     'emails',
     'phone',
+    'reviews',
     'rest_framework'
 ]
 
