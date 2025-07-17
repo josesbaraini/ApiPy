@@ -4,7 +4,9 @@ from emails.serializers import EmailSerializer
 from phone.serializers import PhoneSerializer
 
 class ClientSerializer(serializers.ModelSerializer):
-    emails = EmailSerializer(many=True)
+    emails = EmailSerializer(many=True, read_only=True)
+    phones = PhoneSerializer(many=True, read_only=True)
+
     class Meta:
         model = Client
         fields= "__all__"
