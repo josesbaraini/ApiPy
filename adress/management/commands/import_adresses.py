@@ -30,17 +30,17 @@ class Command(BaseCommand):
                 state_abbr = row['state_abbr']
                 state = row['state']
                 ibge_code = row['ibge_code']
-                
+
                 Adress.objects.create(
-                type = type,
-                state_registration = state_registration,
-                postal_code = postal_code,
-                address = address,
-                address_complement = address_complement,
-                neighborhood = neighborhood,
-                city = city,
-                area_code = area_code,
-                state_abbr = state_abbr,
-                state = state,
-                ibge_code = ibge_code
+                type=type,
+                state_registration=state_registration,
+                postal_code=postal_code,
+                address=address,
+                address_complement=address_complement,
+                neighborhood=neighborhood,
+                city=city,
+                area_code=area_code,
+                state_abbr=state_abbr,
+                state=state,
+                ibge_code=ibge_code
                 )
