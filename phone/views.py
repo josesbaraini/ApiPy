@@ -8,10 +8,11 @@ from App.permisions import GlobalPermissionClass
 # Create your views here.
 class PhoneCreateListView(generics.ListCreateAPIView):
     permission_classes = (IsAuthenticated, GlobalPermissionClass,)
-    queryset=Phone.objects.all()
+    queryset = Phone.objects.all()
     serializer_class = PhoneSerializer
+
 
 class PhoneRetriveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (IsAuthenticated, GlobalPermissionClass,)
-    queryset=Phone.objects.all()
+    queryset = Phone.objects.all()
     serializer_class = PhoneSerializer

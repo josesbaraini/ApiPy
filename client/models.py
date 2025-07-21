@@ -2,8 +2,6 @@ from django.db import models
 from adress.models import Adress
 
 
-
-
 class Client(models.Model):
     id = models.AutoField(primary_key=True)
     deleted = models.BooleanField(default=False)
@@ -22,7 +20,3 @@ class Client(models.Model):
 
     def __str__(self):
         return self.name
-    
-
-
-

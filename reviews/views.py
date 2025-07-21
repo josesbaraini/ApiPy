@@ -8,10 +8,11 @@ from App.permisions import GlobalPermissionClass
 # Create your views here.
 class ReviewCreateListView(generics.ListCreateAPIView):
     permission_classes = (IsAuthenticated, GlobalPermissionClass,)
-    queryset=Review.objects.all()
+    queryset = Review.objects.all()
     serializer_class = ReviewSerializer
+
 
 class ReviewRetriveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = (IsAuthenticated, GlobalPermissionClass,)
-    queryset=Review.objects.all()
+    queryset = Review.objects.all()
     serializer_class = ReviewSerializer

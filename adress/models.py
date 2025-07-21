@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Adress(models.Model):
     type = models.CharField(
         max_length=2,

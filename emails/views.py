@@ -5,13 +5,15 @@ from emails.serializers import EmailSerializer
 from App.permisions import GlobalPermissionClass
 
 
-# Create your views here.
 class EmailCreateListView(generics.ListCreateAPIView):
+
     permission_classes = (IsAuthenticated, GlobalPermissionClass,)
-    queryset=Email.objects.all()
+    queryset = Email.objects.all()
     serializer_class = EmailSerializer
 
+
 class EmailRetriveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
+
     permission_classes = (IsAuthenticated, GlobalPermissionClass,)
-    queryset=Email.objects.all()
+    queryset = Email.objects.all()
     serializer_class = EmailSerializer
