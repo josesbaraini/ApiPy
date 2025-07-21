@@ -1,0 +1,7 @@
+id,type,state_registration,postal_code,address,address_complement,neighborhood,city,area_code,state_abbr,state,ibge_code
+1,AA,RO,76880000,Rua das Flores,,Centro,Vilhena,69,RO,Rondônia,1100304
+2,AA,RO,76890000,Avenida Brasil,Apto 12,Jardim América,Porto Velho,69,RO,Rondônia,1100205
+3,MA,RO,76980226,Rua Rosilene Araújo de Castro,,,Vilhena,,,,
+4,MA,RO,76885000,Rua Belo Horizonte,,Setor 19,Ariquemes,69,RO,Rondônia,1100023
+5,AA,RO,76900000,Rua das Palmeiras,Loja 5,Centro,Ji-Paraná,69,RO,Rondônia,1100121
+6,MA,RO,76980226,Rua Rosilene Araújo De Castro,,,Vilhena,,,,
